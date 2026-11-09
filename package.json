@@ -1,0 +1,19 @@
+{
+  "name": "stremio-lookalike",
+  "version": "0.1.0",
+  "description": "Recherche façon Stremio : fan-out vers des providers déclarant l'extra `search` (GET /catalog/{type}/{id}/search={q}.json), une section par provider, autocomplétion locale et historique.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --test",
+    "demo": "node src/cli/search.js",
+    "build:exe": "node scripts/build-exe.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "postject": "^1.0.0-alpha.6"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
