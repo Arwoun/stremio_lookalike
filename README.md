@@ -10,9 +10,20 @@ L'architecture et le vocabulaire reproduisent volontairement le code source offi
 ## Utilisation
 
 ```bash
-npm test              # tests (node:test, aucun dependency)
-npm run demo -- batman   # démo : démarre 2 providers locaux et lance une recherche
+npm test                    # tests (node:test)
+npm run demo -- batman      # démo : démarre 2 providers locaux et lance une recherche
+npm install && npm run build:exe   # fabrique dist/stremio-lookalike.exe (Windows) ou dist/stremio-lookalike
 ```
+
+## Exécutable autonome (.exe)
+
+`npm run build:exe` bundle la CLI avec esbuild, génère un blob [Node SEA](https://nodejs.org/api/single-executable-applications.html)
+et l'injecte dans une copie du binaire Node courant via postject :
+
+- sur **Windows** : produit `dist/stremio-lookalike.exe` — double-clic ou `stremio-lookalike.exe "dark knight"`
+- sur Linux/macOS : produit `dist/stremio-lookalike`
+
+En mode SEA, l'application attend la touche Entrée avant de se fermer (fenêtre console visible).
 
 ## Architecture
 
